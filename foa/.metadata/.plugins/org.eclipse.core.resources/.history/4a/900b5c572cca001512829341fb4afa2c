@@ -1,0 +1,11 @@
+package djikstra;
+
+public class Djikstra_Test {
+	
+	public static void main(String [] args){
+		
+		Djikstra d = new Djikstra();
+		d.start();
+		
+	}
+}

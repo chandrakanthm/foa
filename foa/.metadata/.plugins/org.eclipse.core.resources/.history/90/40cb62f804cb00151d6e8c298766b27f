@@ -1,0 +1,8 @@
+package djikstra;
+
+import java.util.PriorityQueue;
+
+public class DjikstraPQ {
+	PriorityQueue< Node> pq;
+	
+}

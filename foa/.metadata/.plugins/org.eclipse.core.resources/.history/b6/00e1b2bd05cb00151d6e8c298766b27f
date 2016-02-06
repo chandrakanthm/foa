@@ -1,0 +1,125 @@
+package djikstra;
+
+import java.io.File;
+import java.util.*;
+
+public class Djikstra {	
+	    
+    int min = 999;
+    
+    private int minDistanceNode(int[] a, int[] visited){
+    
+        int index = -1;
+        int greatest = 999;
+        
+        for(int i = 0; i < a.length; i++){
+            
+            if(a[i] == 0 || visited[i] == 1) continue;
+            
+            if(a[i] < greatest){
+                greatest = a[i];
+                index = i;
+            }
+        }
+        
+        min = greatest;
+        return index;
+    }
+    
+    public void start () throws Exception
+	{
+	    int n, m;
+	    
+	    Scanner scanIn = new Scanner(new File("/root/foa/foa_assignment_1/src/djikstra/input.txt"));
+        String numberOfVertices = scanIn.nextLine();
+        n = Integer.parseInt(numberOfVertices);
+        
+        int [][] a = new int[n][n];
+        int [][] b = new int[n][n];
+        
+        
+        for(int i = 0 ; i < n; i++){
+        	Arrays.fill(a[i], Integer.MAX_VALUE);
+        }
+        
+        String numberOfEdges = scanIn.nextLine();
+        m = Integer.parseInt(numberOfEdges);
+        
+        String edge;
+        String [] edgeParts;
+        
+        for(int index = 0; index < m; index++){
+            
+            edge = scanIn.nextLine();
+            edgeParts = edge.split(":");
+            
+            int i = Integer.parseInt(edgeParts[0]);
+            int j = Integer.parseInt(edgeParts[1]);
+            int value = Integer.parseInt(edgeParts[2]);
+            
+            a[i][j] = value;
+        }
+        
+        String newEdges = scanIn.nextLine();
+        int k = Integer.parseInt(newEdges);
+        
+        for(int index = 0; index < k; index++){
+            
+            edge = scanIn.nextLine();
+            edgeParts = edge.split(":");
+            
+            int i = Integer.parseInt(edgeParts[0]);
+            int j = Integer.parseInt(edgeParts[1]);
+            int value = Integer.parseInt(edgeParts[2]);
+            
+            b[i][j] = value;
+        }
+        
+        int s = scanIn.nextInt();
+        
+        String destination = scanIn.nextLine();
+        int d = Integer.parseInt(destination);
+        
+        int [] distances = new int[n];
+        int [] previous = new int[n];
+        int [] visited = new int[n];
+        
+        distances[s] = 0;
+        
+        
+        
+        
+        while(visited[d] != 1){
+            
+            int u = minDistanceNode(distances, visited);
+            
+            if( u == -1 ){
+                break;
+            }
+            
+            for(int i = 0; i < n; i++){
+                
+            	if(i == u) continue;
+            	
+                if(a[u][i]!= 0 && min + a[u][i] < distances[i])
+                {
+                    distances[i] = min + a[u][i];
+                    previous[i] = u; 
+                }
+                
+            }
+            visited[u] = 1;
+            
+        }
+        
+        if(visited [d] == 0 ){
+            System.out.println("No path");
+        } else {
+            
+            System.out.println("Shortest distance: " + distances[d]);
+            
+        }
+        scanIn.close();
+	}
+}
+

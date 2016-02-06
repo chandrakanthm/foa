@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/foa_assignment_1/src/djikstra/Djikstra_Test.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="djikstra.Djikstra_Test"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="5&#10;5&#10;0:1:5&#10;0:4:7&#10;0:2:8&#10;0:3:11&#10;2:3:1&#10;1&#10;1:2:2&#10;0&#10;3"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="foa_assignment_1"/>
+</launchConfiguration>

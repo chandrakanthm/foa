@@ -1,0 +1,10 @@
+package djikstra;
+
+public class Node {
+	public Node(int index, int distance) {
+		this.index = index;
+		this.priority = distance;
+	}
+	int index;
+	int priority;
+}

@@ -1,0 +1,6 @@
+package djikstra;
+
+public class Node {
+	int vertex;
+	int priority;
+}

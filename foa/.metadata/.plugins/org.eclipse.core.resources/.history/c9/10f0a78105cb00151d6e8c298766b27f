@@ -1,0 +1,15 @@
+package djikstra;
+
+import java.util.PriorityQueue;
+
+public class DjikstraPQ {
+	PriorityQueue<Node> pq;
+	
+	public void insert(int index, int distance){
+		pq.add(new Node(index, distance));
+	}
+	
+	public void getMinElement(){
+		return pq.remove();
+	}
+}

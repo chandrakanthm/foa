@@ -1,0 +1,21 @@
+package djikstra;
+
+import java.util.Comparator;
+
+public class Node implements Comparable<Node>{
+	
+	int index;
+	int priority;
+	
+	public Node(int index, int distance) {
+		this.index = index;
+		this.priority = distance;
+	}
+
+	@Override
+	public int compare(Node arg0, Node arg1) {
+		
+		return (arg0.priority > arg1.priority) ? -1:1; 
+	}
+	
+}

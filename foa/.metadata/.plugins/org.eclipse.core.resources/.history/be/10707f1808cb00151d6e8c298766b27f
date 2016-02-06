@@ -1,0 +1,13 @@
+package djikstra;
+
+public class Node implements Comparator<Node>{
+	
+	int index;
+	int priority;
+	
+	public Node(int index, int distance) {
+		this.index = index;
+		this.priority = distance;
+	}
+	
+}
